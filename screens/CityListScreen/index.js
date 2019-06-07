@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Button, List } from 'react-native-paper';
 import FixedTopBar from '../../components/FixedTopBar';
 
 const API_CITIES = 'http://10.0.2.2:8080/weather-crawler/available-cities';
