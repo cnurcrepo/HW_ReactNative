@@ -4,41 +4,24 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import CityListScreen from '../screens/CityListScreen';
 import WeatherDetailScreen from '../screens/WeatherDetailScreen';
+import HomeWeatherScreen from '../screens/HomeWeatherScreen';
 
 const CityListScreenStack = createStackNavigator({
-  Home: HomeScreen,
+  CityList: CityListScreen,
 });
-
-// HomeStack.navigationOptions = {
-//   tabBarLabel: 'Home',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={
-//         Platform.OS === 'ios'
-//           ? `ios-information-circle${focused ? '' : '-outline'}`
-//           : 'md-information-circle'
-//       }
-//     />
-//   ),
-// };
 
 const WeatherDetailScreenStack = createStackNavigator({
-  Links: LinksScreen,
+  WeatherDetail: WeatherDetailScreen,
 });
 
-// LinksStack.navigationOptions = {
-//   tabBarLabel: 'Links',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-//     />
-//   ),
-// };
+
+const HomeWeatherScreenStack = createStackNavigator({
+  HomeWeather: HomeWeatherScreen,
+});
 
 
 export default createBottomTabNavigator({
   CityListScreenStack,
   WeatherDetailScreenStack,
+  HomeWeatherScreenStack,
 });

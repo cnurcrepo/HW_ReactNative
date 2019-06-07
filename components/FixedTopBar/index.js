@@ -3,23 +3,37 @@ import { Appbar } from 'react-native-paper';
 import { StyleSheet, Text } from 'react-native';
 
 export default class FixedTopBar extends React.Component {
+
   render() {
+    const { title } = this.props;
     return (
-      <Appbar style={appBarStyles.top}>
-        <Text>Title</Text>
-        <Appbar.Action icon="home" onPress={() => console.log('Pressed archive')} />
-        <Appbar.Action icon="archive" onPress={() => console.log('Pressed archive')} />
-        <Appbar.Action icon="star" onPress={() => console.log('Pressed mail')} />
+      <Appbar style={appBarStyles.topFixed}>
+        <Text style={appBarStyles.titleStyle}>{title}</Text>
+        {/* <Appbar.Action style={appBarStyles.iconsStyle} icon="home" onPress={() => console.log('Pressed archive')} />
+        <Appbar.Action style={appBarStyles.iconsStyle} icon="archive" onPress={() => console.log('Pressed archive')} />
+        <Appbar.Action style={appBarStyles.iconsStyle} icon="star" onPress={() => console.log('Pressed mail')} />*/}
       </Appbar>
     );
   }
 }
 
 const appBarStyles = StyleSheet.create({
-  top: {
+  topFixed: {
     position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
   },
+
+  titleStyle: {
+    marginLeft: 15,
+    fontFamily: 'JejuGothic',
+    color: '#ffffff',
+    fontSize: 20,
+    flex: 1,
+  },
+
+  iconsStyle: {
+    alignSelf: 'flex-end',
+  }
 });

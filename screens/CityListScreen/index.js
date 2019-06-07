@@ -50,7 +50,6 @@ export default class CityListScreen extends Component {
   render() {
     return (
       <View>
-        <FixedTopBar></FixedTopBar>
         <ScrollView>
           <FlatList style={styles.container}
                     renderItem={({ item }) => this.renderItem(item)}
@@ -63,11 +62,12 @@ export default class CityListScreen extends Component {
   }
 }
 
+// flex1이 아이콘들을 오른쪽에 붙게함
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 18,
+    marginTop: 60,
   },
 
   text: {

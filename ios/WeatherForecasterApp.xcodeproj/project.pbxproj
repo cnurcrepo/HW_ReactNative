@@ -60,6 +60,7 @@
 		7A409E5BBD9B4445A3BF8D19 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81207486ECB945BB90296E1C /* libRNGestureHandler-tvOS.a */; };
 		0AE783256A304975B1B33C92 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0872B1B7F2004B07B7881538 /* libReactNativeNavigation.a */; };
 		9C0E0FE39B664D3882993501 /* ReactNativeNavigationTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 357A2975EFA5401FB263F519 /* ReactNativeNavigationTests.xctest */; };
+		F384D7632DF2471CB133B3C5 /* JejuGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20F48E531EA24E58AFD676AE /* JejuGothic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,6 +392,7 @@
 		B841C07279A74FBE8AB3E372 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeNavigation.xcodeproj"; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		0872B1B7F2004B07B7881538 /* libReactNativeNavigation.a */ = {isa = PBXFileReference; name = "libReactNativeNavigation.a"; path = "libReactNativeNavigation.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		357A2975EFA5401FB263F519 /* ReactNativeNavigationTests.xctest */ = {isa = PBXFileReference; name = "ReactNativeNavigationTests.xctest"; path = "ReactNativeNavigationTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		20F48E531EA24E58AFD676AE /* JejuGothic.ttf */ = {isa = PBXFileReference; name = "JejuGothic.ttf"; path = "../asset/fonts/JejuGothic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -683,6 +685,7 @@
 				41C95865334843A892BF159B /* Octicons.ttf */,
 				BEECDEC8F6BF48BE87435098 /* SimpleLineIcons.ttf */,
 				87FDBA0700E94641824C1A59 /* Zocial.ttf */,
+				20F48E531EA24E58AFD676AE /* JejuGothic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				94DC5C306EAE457387FB0D4A /* Octicons.ttf in Resources */,
 				75ED5B19E6BA469D83C579D8 /* SimpleLineIcons.ttf in Resources */,
 				AE89F1FB19944026ADF0C853 /* Zocial.ttf in Resources */,
+				F384D7632DF2471CB133B3C5 /* JejuGothic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

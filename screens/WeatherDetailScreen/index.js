@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import FixedTopBar from '../../components/FixedTopBar';
 
 const theme = {
   ...DefaultTheme,
@@ -14,6 +15,7 @@ const theme = {
 const API_WEATHER = 'http://10.0.2.2:8080/weather-crawler/current-weathers/by-city-name';
 
 export default class WeatherDetailScreen extends Component {
+
   static navigationOptions = ({ navigation }) => {
     return {
       title: `Weather Info: ${navigation.getParam('city', 'Unknown')}`,
