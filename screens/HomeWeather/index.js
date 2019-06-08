@@ -90,18 +90,18 @@ export default class HomeWeather extends Component {
 
     return (
       <View style={styles.container}>
-        <Card>
-          <Card.Title title="Daejeon" subtitle="현재 날씨 입니다" />
-          <Card.Content>
-            <Text style={styles.text}>temp: {celsius.toFixed(1)}</Text>
-            <Text style={styles.text}>wind speed: {windSpeed} m/s</Text>
-            <Text style={styles.text}>weatherMain: {weatherMain}</Text>
-            <Text style={styles.text}>weatherDesc: {weatherDesc}</Text>
-            <Text style={styles.text}>cloudDegree: {cloudDegree}</Text>
-            <Text style={styles.text}>barometric pressure: {pressure} hPa</Text>
-            <Text style={styles.text}>humidity: {humidity} %</Text>
-          </Card.Content>
+        <Card style={styles.cardContainer}>
           <Card.Cover style={styles.cardImage} source={weatherImage} />
+          <Card.Title title="Daejeon" subtitle="현재 날씨 입니다" />
+          <Card.Content style={{marginTop: 20}}>
+            <Text style={styles.text}>온도: {celsius.toFixed(1)}°C</Text>
+            <Text style={styles.text}>풍속: {windSpeed} m/s</Text>
+            <Text style={styles.text}>날씨: {weatherMain}</Text>
+            <Text style={styles.text}>설명: {weatherDesc}</Text>
+            <Text style={styles.text}>기압: {pressure} hPa</Text>
+            <Text style={styles.text}>습도: {humidity} %</Text>
+            <Text style={styles.text}>구름낀 정도: {cloudDegree}</Text>
+          </Card.Content>
         </Card>
       </View>
     );
@@ -112,7 +112,7 @@ export default class HomeWeather extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 60,
+    marginTop: 50,
     backgroundColor: '#ffffff',
   },
 
@@ -121,9 +121,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 16,
   },
-
+  cardContainer:{
+    backgroundColor: '#f5f5f5',
+  },
   cardImage: {
-    marginTop: 20,
+
   },
 
 });

@@ -16,7 +16,7 @@ export default class BottomFixedNavigation extends React.Component {
     index: 0,
     routes: [
       { key: 'Home', title: 'Home', icon: 'home' },
-      { key: 'City_List', title: 'City List', icon: 'archive' },
+      { key: 'City_List', title: 'City List', icon: 'location-city' },
       { key: 'Bookmark', title: 'Bookmark', icon: 'star' },
     ],
   };

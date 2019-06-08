@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Appbar } from 'react-native-paper';
 import { StyleSheet, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class FixedTopBar extends React.Component {
 
@@ -8,6 +9,7 @@ export default class FixedTopBar extends React.Component {
     const { title } = this.props;
     return (
       <Appbar style={appBarStyles.topFixed}>
+        <Icon name="wb-sunny" size={25} color="#ffffff" style={{marginLeft: 7}} />
         <Text style={appBarStyles.titleStyle}>{title}</Text>
         {/* <Appbar.Action style={appBarStyles.iconsStyle} icon="home" onPress={() => console.log('Pressed archive')} />
         <Appbar.Action style={appBarStyles.iconsStyle} icon="archive" onPress={() => console.log('Pressed archive')} />
@@ -33,7 +35,11 @@ const appBarStyles = StyleSheet.create({
     flex: 1,
   },
 
-  iconsStyle: {
+  iconsStartStyle: {
+    alignSelf: 'flex-start',
+  },
+
+  iconsEndStyle: {
     alignSelf: 'flex-end',
   }
 });
