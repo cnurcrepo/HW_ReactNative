@@ -16,7 +16,7 @@ export default class SingleScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <FixedTopBar title="날씨 예보"></FixedTopBar>
+        <FixedTopBar title="현재 날씨"></FixedTopBar>
         <BottomFixedNavigation stackNavigation={this.props.navigation}/>
       </View>
     )

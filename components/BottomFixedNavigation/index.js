@@ -5,12 +5,13 @@ import { StyleSheet } from 'react-native';
 import AppNavigator from '../../App.js';
 import CityListScreen from '../../screens/CityListScreen';
 import HomeWeatherScreen from '../../screens/HomeWeather';
+import BookmarkScreen from '../../screens/BookmarkScreen';
 
 export default class BottomFixedNavigation extends React.Component {
 
   CityListRoute = () => <CityListScreen navigation={this.props.stackNavigation}/>;
   HomeWeatherRoute = () => <HomeWeatherScreen city="Daejeon" navigation={this.props.stackNavigation}/>;
-  BookmarkRoute = () => <Text>Bookmark</Text>;
+  BookmarkRoute = () => <BookmarkScreen navigation={this.props.stackNavigation}/>;
 
   state = {
     index: 0,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Card, Paragraph, Title, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { Card, Paragraph, Title, DefaultTheme, Avatar, ActivityIndicator, Colors } from 'react-native-paper';
 
 import BottomFixedNavigation from '../../components/BottomFixedNavigation';
 import FixedTopBar from '../../components/FixedTopBar';
@@ -45,9 +45,7 @@ export default class HomeWeather extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={styles.container}>
-          <Text>데이터를 불러오는 중입니다.</Text>
-        </View>
+        <ActivityIndicator style={styles.ActivityIndicatorStyle} animating={true} color={Colors.blue200} />
       )
     }
 
@@ -92,7 +90,8 @@ export default class HomeWeather extends Component {
       <View style={styles.container}>
         <Card style={styles.cardContainer}>
           <Card.Cover style={styles.cardImage} source={weatherImage} />
-          <Card.Title title="Daejeon" subtitle="현재 날씨 입니다" />
+          <Card.Title style={styles.cityTitle} title="Daejeon" subtitle="현재 날씨 입니다"
+            left={(props) => <Avatar.Icon {...props} icon="location-city" />}/>
           <Card.Content style={{marginTop: 20}}>
             <Text style={styles.text}>온도: {celsius.toFixed(1)}°C</Text>
             <Text style={styles.text}>풍속: {windSpeed} m/s</Text>
@@ -115,7 +114,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     backgroundColor: '#ffffff',
   },
-
   text: {
     fontFamily: 'JejuGothic',
     marginBottom: 10,
@@ -124,8 +122,13 @@ const styles = StyleSheet.create({
   cardContainer:{
     backgroundColor: '#f5f5f5',
   },
-  cardImage: {
-
+  cityTitle: {
+    fontSize: 35,
+  },
+  ActivityIndicatorStyle:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
 });

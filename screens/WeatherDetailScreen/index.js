@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { DefaultTheme, ActivityIndicator, Colors , Provider as PaperProvider } from 'react-native-paper';
+import { DefaultTheme, ActivityIndicator, Colors } from 'react-native-paper';
 import FixedTopBar from '../../components/FixedTopBar';
 
 const CloudyImage = './weatherIcons/cloudy.png';

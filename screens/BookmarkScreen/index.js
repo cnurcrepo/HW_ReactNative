@@ -4,18 +4,30 @@ import { Button, List } from 'react-native-paper';
 import FixedTopBar from '../../components/FixedTopBar';
 import * as RNFS from 'react-native-fs';
 
+// 임시로 넣어놓은 값
+var bookmarks = ["Anbaeteo","Andong","Angol"];
+
 const API_CITIES = 'http://10.0.2.2:8080/weather-crawler/available-cities';
 
-const fileWrite = (contents) => {
-  RNFS.writeFile('../BookmarkScreen/bookmark.txt', contents, 'ascii').then(res => {
+// readFile이 파일을 읽지를 못함
+const readFile = () => {
+
+  RNFS.readFile('/bookmark.txt', 'ascii').then(res => {
+
     console.log(res);
+    bookmarks = res;
+    
+    // for(var i = 0; i < res.length; i++) {
+    //    items = res;
+    // }
+
   })
   .catch(err => {
     console.log(err.message, err.code);
   });
-}
+};
 
-export default class CityListScreen extends Component {
+export default class BookmarkScreen extends Component {
 
   static navigationOptions = {
     header: null
@@ -30,34 +42,23 @@ export default class CityListScreen extends Component {
   }
 
   async componentDidMount() {
-    fetch(API_CITIES)
-      .then(response => response.json())
-      .then(cities => {
-        console.log('cities =', cities.length);
-        this.setState({
-          cities
-        });
-      });
-  }
+    await readFile();
 
-  onPressCity(item) {
-    this.props.navigation.navigate(
-      'Detail',
-      {
-        city: item
-      }
-    );
+    this.setState({
+      cities: bookmarks,
+    });
   }
 
   renderItem(city) {
     return (
       <TouchableOpacity style={styles.item} onPress={() => this.onPressCity(city)}>
-        <Button icon={{source : "label", direction: 'ltr'}} raised theme={{ roundness: 3 }}>{city}</Button>
+        <Button icon={{source : "star", direction: 'ltr'}} raised theme={{ roundness: 3 }}>{city}</Button>
       </TouchableOpacity>
     );
   }
 
   render() {
+
     return (
       <View>
         <ScrollView>
@@ -70,6 +71,17 @@ export default class CityListScreen extends Component {
       </View>
     );
   }
+
+  onPressCity(item) {
+    this.props.navigation.navigate(
+      'Detail',
+      {
+        city: item
+      }
+    );
+  }
+
+
 }
 
 // flex1이 아이콘들을 오른쪽에 붙게함
@@ -84,4 +96,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
   },
+
 });
