@@ -9,7 +9,7 @@ export default class FixedTopBar extends React.Component {
     const { title } = this.props;
     return (
       <Appbar style={appBarStyles.topFixed}>
-        <Icon name="wb-sunny" size={25} color="#ffffff" style={{marginLeft: 7}} />
+        {/* <Icon name="wb-sunny" size={25} color="#ffffff" style={{marginLeft: 7}} /> */}
         <Text style={appBarStyles.titleStyle}>{title}</Text>
         {/* <Appbar.Action style={appBarStyles.iconsStyle} icon="home" onPress={() => console.log('Pressed archive')} />
         <Appbar.Action style={appBarStyles.iconsStyle} icon="archive" onPress={() => console.log('Pressed archive')} />
